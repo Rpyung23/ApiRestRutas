@@ -1,0 +1,137 @@
+const { sql_rutas_frecuencias ,sql_controles,sql_controles_all,
+    sql_buses_all_ruta,sql_monitoreo_bus} = require('../mysql/consultas.js');
+let express = require("express")
+
+const app = express();
+
+app.get("/rutas",function (req,res)
+{
+    /**Todas las rutas y sus frecuencias**/
+
+    sql_rutas_frecuencias((error,results)=>
+    {
+        if(error)
+        {
+            res.status(500).json(
+                {
+                    ok:"error",
+                    error:error
+                })
+        }else
+        {
+            res.status(200).json(
+                {
+                    ok:"ok",
+                    error:"s/n",
+                    datos:results
+                })
+        }
+    });
+
+});
+/**CONTROLES POR LA FERCUENCIA (ID)**/
+app.get("/controles",function (req,res)
+{
+    sql_controles(req.body.id,(error,results)=>
+    {
+       if (error)
+       {
+           res.status(500).json(
+               {
+                   ok:"error",
+                   error:error
+               });
+       }else
+           {
+               res.status(200).json(
+                   {
+                       ok:"ok",
+                       error:"s/n",
+                       datos:results
+                   });
+           }
+    });
+})
+/**TODOS LOS CONTROLES**/
+app.get("/controles_all",function (req,res)
+{
+    sql_controles_all((error,results)=>
+    {
+        if (error)
+        {
+            res.status(500).json(
+                {
+                    ok:"error",
+                    error:error
+                });
+        }else
+        {
+            res.status(200).json(
+                {
+                    ok:"ok",
+                    error:"s/n",
+                    datos:results
+                });
+        }
+    });
+})
+
+/**TODOS LOS BUSES (RASTREO) POR RUTA**/
+app.get("/buses_all",function (req,res)
+{
+    sql_buses_all_ruta(req.body.letra_ruta,req.body.date,(error,results)=>
+    {
+        if(error)
+        {
+            res.status(500).json(
+                {
+                    ok:"error",
+                    error:error
+                })
+        }else
+            {
+                res.status(200).json(
+                    {
+                        ok:"ok",
+                        error:"s/n",
+                        datos:results
+                    })
+            }
+    })
+})
+
+/**RASTREO DE BUS**/
+app.get("/rastreo",function (req,res)
+{
+    sql_monitoreo_bus(req.body.bus,(error,results)=>
+    {
+        if(error)
+        {
+            res.status(500).json(
+                {
+                    ok:"error",
+                    error:error
+                })
+        }else
+        {
+            if(results.length>0)
+            {
+                res.status(200).json(
+                    {
+                        ok:"ok",
+                        error:"s/n",
+                        datos:results
+                    })
+            }else
+                {
+                    res.status(200).json(
+                        {
+                            ok:"ok",
+                            error:"vacio",
+                            datos:results
+                        })
+                }
+        }
+    })
+})
+module.exports = app
