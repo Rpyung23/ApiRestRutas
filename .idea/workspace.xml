@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fd6e691-02d9-474b-8e51-e9ca585f1a2e" name="Default Changelist" comment="" />
+    <list default="true" id="2fd6e691-02d9-474b-8e51-e9ca585f1a2e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/frecuencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/frecuencias.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/rutas.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/rutas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql/consultas.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/consultas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rutas-frecuencias/rutas-frecuencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/rutas-frecuencias/rutas-frecuencias.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <execution />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -17,10 +24,20 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/server.js" root0="SKIP_INSPECTION" />
   </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="ProjectId" id="1lCKWmk4VmscPy9pwDl07wfmIad" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -30,8 +47,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.19.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="settings.php.debug.servers" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -42,7 +63,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607095666761</updated>
-      <workItem from="1607095667988" duration="18210000" />
+      <workItem from="1607095667988" duration="18528000" />
+      <workItem from="1607138839562" duration="226000" />
+      <workItem from="1607139088782" duration="141000" />
+      <workItem from="1607139240629" duration="642000" />
+      <workItem from="1607139902816" duration="6538000" />
     </task>
     <servers />
   </component>
@@ -54,5 +79,25 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1607115839724" />
+    <state x="413" y="144" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper" timestamp="1607139747944">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="144" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1607139747944" />
+    <state x="430" y="229" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1607138990255">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="430" y="229" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1607138990255" />
+    <state x="554" y="262" key="Github.ShareDialog" timestamp="1607125445502">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="554" y="262" key="Github.ShareDialog/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1607125445502" />
+    <state x="518" y="69" key="Github.UntrackedFilesDialog" timestamp="1607125462158">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="518" y="69" key="Github.UntrackedFilesDialog/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1607125462158" />
+    <state x="184" y="9" key="SettingsEditor" timestamp="1607139841014">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1607139841014" />
   </component>
 </project>

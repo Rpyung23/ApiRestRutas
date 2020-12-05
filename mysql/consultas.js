@@ -1,5 +1,7 @@
+let class_rutas = require("../models/rutas");
+let class_frecuencias = require("../models/frecuencias");
 var mysql = require("mysql");
-
+let Orutas = []
 var conexion = mysql.createConnection(
     {
         host:"71.6.142.111",
@@ -22,35 +24,62 @@ conexion.connect((error)=>
 /***SQL PARA OBTENER LA RUTA Y LAS FRECUENCIAS**/
 let sql_rutas_frecuencias = (callback)=>
 {
-    conexion.query("select  R.idRuta as idruta,R.DescRuta as ruta,R.LetrRuta as letraruta,F.DescFrec " +
+    conexion.query("select  R.idRuta as idruta,R.DescRuta as ruta," +
+        "R.LetrRuta as letraruta,F.LetrFrec as letrafrecuencia" +
+        ",F.DescFrec " +
         "as frecuencia " +
         "from ruta as R join frecuencia as F " +
         "on R.idRuta=F.idRutaFrec where F.ActiFrec=1 and R.ActiRuta=1",(error,results,fields)=>
     {
-
-        /*
-        if(error)
-        {
-            return error;
-        }
-        */
-        /*for(let i =0;i<results.length;i++)
-        {
-            /*let oR = new cRutas(fields);
-            oR.setRuta()
-            oR.setLetraRuta()*//*
-            console.log(`ID Ruta -> ${results[0].idruta}`)
-            console.log(`Ruta -> ${results[1].ruta}`)
-            console.log(`Letra Ruta -> ${results[2].letraruta}`)
-            console.log(`FRECUENCIA -> ${results[3].frecuencia}`)
-        }*/
 
         if(error)
         {
             callback(error,results)
         }else
             {
-                callback(null,results)
+                /**DEFINIR ARRAYS OBJETO**/
+
+                let i =0;
+                let pos_init = 0;
+
+                for (i=0;i<results.length;i++)
+                {
+                    /*console.log(`${results[i].idruta} -> ${results[i].ruta} -> ${results[i].letraruta}
+                    -> ${results[i].frecuencia}`)*/
+                    let Rutas = new class_rutas();
+                    /*Orutas[i] = new class_rutas();
+                    Orutas[i].setNameRuta(results[i].ruta);
+                    Orutas[i].setLetraRuta(results[i].letraruta);
+                    Orutas[i].setIdRuta(results[i].idruta);*/
+
+                    Rutas.setNameRuta(results[i].ruta);
+                    Rutas.setLetraRuta(results[i].letraruta);
+                    Rutas.setIdRuta(results[i].idruta);
+
+                    let oFrecuencias = []
+
+                    for (let j = 0;j<results.length;j++)
+                    {
+                        if (Rutas.getIdRuta()===results[j].idruta)
+                        {
+                            var oF = new class_frecuencias();
+                            oF.setIdFrecuencia(results[j].letrafrecuencia)
+                            oF.setDetalleFrecuencia(results[j].frecuencia)
+                            oFrecuencias.push(oF);
+                            pos_init = j;
+                        }
+                    }
+
+                    if(oFrecuencias.length > 0)
+                    {
+                        Rutas.setOFrecuecias(oFrecuencias);
+                        Orutas.push(Rutas)
+                    }
+                    i = pos_init;
+                    console.log(`i -> ${i}`)
+                }
+
+                callback(null,Orutas)
             }
 
 

@@ -13,7 +13,6 @@ app.use(body.urlencoded({extended:false}));
 app.use(body.json())
 
 
-
 app.use(rutas_frecuencias);
 
 

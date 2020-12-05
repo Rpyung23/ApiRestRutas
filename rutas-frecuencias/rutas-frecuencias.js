@@ -29,7 +29,7 @@ app.get("/rutas",function (req,res)
     });
 
 });
-/**CONTROLES POR LA FERCUENCIA (ID)**/
+/**CONTROLES POR LA FRECUENCIA (ID)**/
 app.get("/controles",function (req,res)
 {
     sql_controles(req.body.id,(error,results)=>
@@ -90,12 +90,23 @@ app.get("/buses_all",function (req,res)
                 })
         }else
             {
-                res.status(200).json(
+                if(results.length>0)
+                {
+                    res.status(200).json(
+                        {
+                            ok:"ok",
+                            error:"s/n",
+                            datos:results
+                        })
+                }else
                     {
-                        ok:"ok",
-                        error:"s/n",
-                        datos:results
-                    })
+                        res.status(200).json(
+                            {
+                                ok:"vacio",
+                                error:"s/n",
+                                datos:results
+                            })
+                    }
             }
     })
 })
@@ -134,4 +145,24 @@ app.get("/rastreo",function (req,res)
         }
     })
 })
+
+/**RUTA CERCANA A MI INICO Y DESTINO**/
+app.get("/miruta",function (req,res)
+{
+    let lat_ini = req.body.lat_ini;
+    let lng_ini = req.body.lng_ini;
+    let lat_fin = req.body.lat_fin;
+    let lng_fin = req.body.lng_fin;
+})
+
+app.post("/rating",function (req,res)
+{
+    res.status(200).json(
+        {
+            ok:"ok",
+            bus:req.body.bus,
+            rating:req.body.rating
+        })
+})
+
 module.exports = app

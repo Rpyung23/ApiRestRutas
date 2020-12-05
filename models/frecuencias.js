@@ -21,3 +21,5 @@ class cFrecuencias
             this.detalle_frecuencia = aux;
         }
     }
+
+    module.exports = cFrecuencias

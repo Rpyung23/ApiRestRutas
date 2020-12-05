@@ -1,23 +1,32 @@
 class cRutas
 {
-    ruta=""
+    idruta = 0
+    nameruta=""
     letraRuta=""
     oFrecuencias = [];
 
     constructor()
     {
     }
-    getRuta()
+    getIdRuta()
     {
-        return this.ruta;
+        return this.idruta;
+    }
+    getNameRuta()
+    {
+        return this.nameruta;
     }
     getLetraRuta()
     {
         return this.letraRuta;
     }
-    setRuta(aux)
+    setIdRuta(aux)
     {
-        this.ruta = aux;
+        this.idruta = aux;
+    }
+    setNameRuta(aux)
+    {
+        this.nameruta = aux;
     }
     setLetraRuta(aux)
     {
@@ -35,4 +44,4 @@ class cRutas
     }
 
 }
-
+module.exports = cRutas
