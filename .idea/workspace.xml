@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fd6e691-02d9-474b-8e51-e9ca585f1a2e" name="Default Changelist" comment="">
+    <list default="true" id="2fd6e691-02d9-474b-8e51-e9ca585f1a2e" name="Default Changelist" comment="05/12/2020 -&gt; apirest-consultas y models se trabajo falta las apirest ruta cercana y rating">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/frecuencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/frecuencias.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/rutas.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/rutas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql/consultas.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/consultas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rutas-frecuencias/rutas-frecuencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/rutas-frecuencias/rutas-frecuencias.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +65,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="settings.php.debug.servers" />
+    <property name="settings.editor.selected.configurable" value="xslt.associations" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -67,12 +80,37 @@
       <workItem from="1607138839562" duration="226000" />
       <workItem from="1607139088782" duration="141000" />
       <workItem from="1607139240629" duration="642000" />
-      <workItem from="1607139902816" duration="6538000" />
+      <workItem from="1607139902816" duration="6666000" />
+      <workItem from="1607360147677" duration="3399000" />
     </task>
+    <task id="LOCAL-00001" summary="05/12/2020 -&gt; apirest-consultas y models se trabajo falta las apirest ruta cercana y rating">
+      <created>1607147028972</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607147028972</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="05/12/2020 -&gt; apirest-consultas y models se trabajo falta las apirest ruta cercana y rating" />
+    <option name="LAST_COMMIT_MESSAGE" value="05/12/2020 -&gt; apirest-consultas y models se trabajo falta las apirest ruta cercana y rating" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607115839724">
@@ -95,9 +133,23 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="518" y="69" key="Github.UntrackedFilesDialog/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1607125462158" />
-    <state x="184" y="9" key="SettingsEditor" timestamp="1607139841014">
+    <state x="184" y="9" key="SettingsEditor" timestamp="1607360312751">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1607360312751" />
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1607139841014" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1607147041425">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1607147041425" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="ApiRestRutas" type="b2602c69:ProjectViewProjectNode" />
+        <item name="ApiRestRutas" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
+    <select />
   </component>
 </project>
