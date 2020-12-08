@@ -4,7 +4,7 @@ let express = require("express")
 let body = require("body-parser");
 const app = express();
 let jsonparser = body.json();
-let url = body.urlencoded();
+let url = body.urlencoded({ extended: false });
 app.get("/rutas",function (req,res)
 {
     /**Todas las rutas y sus frecuencias**/
@@ -78,7 +78,7 @@ app.get("/controles_all",function (req,res)
 })
 
 /**TODOS LOS BUSES (RASTREO) POR RUTA**/
-app.get("/buses_all",jsonparser,function (req,res)
+app.get("/buses_all",url,function (req,res)
 {
     sql_buses_all_ruta(req.body.ruta,req.body.date,(error,results)=>
     {

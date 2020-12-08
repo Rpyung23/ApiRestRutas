@@ -7,7 +7,7 @@ let rutas_frecuencias = require("./rutas-frecuencias/rutas-frecuencias");
 let app = express();
 
 /**parse application/x-www-form-urlencoded**/
-app.use(body.urlencoded({extended:false}));
+app.use(body.urlencoded({extended:true}));
 
 /**parse application/json**/
 app.use(body.json())
