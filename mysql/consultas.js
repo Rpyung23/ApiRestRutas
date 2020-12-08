@@ -1,7 +1,6 @@
 let class_rutas = require("../models/rutas");
 let class_frecuencias = require("../models/frecuencias");
 var mysql = require("mysql");
-let Orutas = []
 var conexion = mysql.createConnection(
     {
         host:"71.6.142.111",
@@ -11,14 +10,7 @@ var conexion = mysql.createConnection(
         password:"Vigitrack102030*"
     });
 
-conexion.connect((error)=>
-{
-    if(error)
-    {
-        return error;
-    }
-    console.log(`CONN -> ${conexion.threadId}`)
-});
+
 
 
 /***SQL PARA OBTENER LA RUTA Y LAS FRECUENCIAS**/
@@ -41,7 +33,8 @@ let sql_rutas_frecuencias = (callback)=>
 
                 let i =0;
                 let pos_init = 0;
-
+                let pos_cont=0;
+                let Orutas = []
                 for (i=0;i<results.length;i++)
                 {
                     /*console.log(`${results[i].idruta} -> ${results[i].ruta} -> ${results[i].letraruta}
@@ -73,12 +66,12 @@ let sql_rutas_frecuencias = (callback)=>
                     if(oFrecuencias.length > 0)
                     {
                         Rutas.setOFrecuecias(oFrecuencias);
-                        Orutas.push(Rutas)
+                        Orutas.push(Rutas);
+                        pos_cont++;
                     }
                     i = pos_init;
                     console.log(`i -> ${i}`)
                 }
-
                 callback(null,Orutas)
             }
 
