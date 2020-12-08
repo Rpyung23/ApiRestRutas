@@ -78,10 +78,18 @@ app.get("/controles_all",function (req,res)
 })
 
 /**TODOS LOS BUSES (RASTREO) POR RUTA**/
-app.get("/buses_all",url,function (req,res)
+app.get("/buses_all",jsonparser,function (req,res)
 {
-    console.log(`ruta ->${req.body.rutas} - date ${req.body.date}`)
-    sql_buses_all_ruta(req.body.rutas,req.body.date,(error,results)=>
+
+
+    let datos =
+        {
+            rutas:req.body.rutas,
+            date:req.body.date
+        }
+    console.log(`${datos.rutas} -> ${datos.date}`)
+
+    sql_buses_all_ruta(datos.rutas,datos.date,(error,results)=>
     {
         if(error)
         {
