@@ -1,9 +1,10 @@
 const { sql_rutas_frecuencias ,sql_controles,sql_controles_all,
     sql_buses_all_ruta,sql_monitoreo_bus} = require('../mysql/consultas.js');
 let express = require("express")
-
+let body = require("body-parser");
 const app = express();
-
+let jsonparser = body.json();
+let url = body.urlencoded();
 app.get("/rutas",function (req,res)
 {
     /**Todas las rutas y sus frecuencias**/
@@ -77,9 +78,9 @@ app.get("/controles_all",function (req,res)
 })
 
 /**TODOS LOS BUSES (RASTREO) POR RUTA**/
-app.get("/buses_all",function (req,res)
+app.get("/buses_all",jsonparser,function (req,res)
 {
-    sql_buses_all_ruta(req.body.letra_ruta,req.body.date,(error,results)=>
+    sql_buses_all_ruta(req.body.ruta,req.body.date,(error,results)=>
     {
         if(error)
         {

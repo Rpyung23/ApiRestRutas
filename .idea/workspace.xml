@@ -22,6 +22,7 @@
     <list default="true" id="2fd6e691-02d9-474b-8e51-e9ca585f1a2e" name="Default Changelist" comment="05/12/2020 -&gt; apirest-consultas y models se trabajo falta las apirest ruta cercana y rating">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql/consultas.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/consultas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rutas-frecuencias/rutas-frecuencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/rutas-frecuencias/rutas-frecuencias.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +85,7 @@
       <workItem from="1607139902816" duration="6666000" />
       <workItem from="1607360147677" duration="3399000" />
       <workItem from="1607370586503" duration="7536000" />
-      <workItem from="1607440599428" duration="1800000" />
+      <workItem from="1607440599428" duration="3333000" />
     </task>
     <task id="LOCAL-00001" summary="05/12/2020 -&gt; apirest-consultas y models se trabajo falta las apirest ruta cercana y rating">
       <created>1607147028972</created>
