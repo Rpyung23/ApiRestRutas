@@ -83,7 +83,8 @@
       <workItem from="1607139240629" duration="642000" />
       <workItem from="1607139902816" duration="6666000" />
       <workItem from="1607360147677" duration="3399000" />
-      <workItem from="1607370586503" duration="2586000" />
+      <workItem from="1607370586503" duration="7536000" />
+      <workItem from="1607440599428" duration="1800000" />
     </task>
     <task id="LOCAL-00001" summary="05/12/2020 -&gt; apirest-consultas y models se trabajo falta las apirest ruta cercana y rating">
       <created>1607147028972</created>
@@ -140,9 +141,10 @@
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1607360312751" />
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1607139841014" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1607147041425">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1607397714707">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1607397714707" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1607147041425" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

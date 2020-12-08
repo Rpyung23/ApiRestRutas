@@ -123,6 +123,10 @@ let sql_buses_all_ruta = (letra_ruta,date,callback)=>
         "from monitoreo as M where LetrRutaMoni = '"+letra_ruta+"' and UltiFechMoni between '"+date+" 05:00'" +
         "and '"+date+" 23:59' and idSali_mMoni<>0 and M.PlacVehiMoni is not null",(error,results)=>
     {
+        console.log(`select M.CodiVehiMoni as vehiculo,M.PlacVehiMoni as placa,M.LetrRutaMoni as letra_ruta,
+        M.UltiLatiMoni as lat,M.UltiLongMoni as lng,M.UltiRumbMoni as grados 
+        from monitoreo as M where LetrRutaMoni = ${letra_ruta} and UltiFechMoni between ${date} 05:00
+        and {date} 23:59 and idSali_mMoni<>0 and M.PlacVehiMoni is not null`)
         if (error)
         {
             callback(error);
