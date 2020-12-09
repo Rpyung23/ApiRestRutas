@@ -208,7 +208,7 @@ app.get("/rastreo",function (req,res)
 })
 
 /**RUTA CERCANA A MI INICO Y DESTINO**/
-app.get("/miruta:lat_ini/:lng_ini/:lat_fin/:lng_fin",function (req,res)
+app.get("/miruta/:lat_ini/:lng_ini/:lat_fin/:lng_fin",function (req,res)
 {
     let lat_ini = req.params.lat_ini;
     let lng_ini = req.params.lng_ini;
