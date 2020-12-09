@@ -1,5 +1,6 @@
 let class_rutas = require("../models/rutas");
 let class_frecuencias = require("../models/frecuencias");
+let cMiRuta = require("../models/miruta");
 var mysql = require("mysql");
 var conexion = mysql.createConnection(
     {
@@ -153,7 +154,56 @@ let sql_monitoreo_bus = (bus,callback)=>
             }
     })
 }
+
+function getKilometros(lat1,lon1,lat2,lon2)
+{
+    rad = function(x) {return x*Math.PI/180;}
+    var R = 6378.137; //Radio de la tierra en km
+    var dLat = rad( lat2 - lat1 );
+    var dLong = rad( lon2 - lon1 );
+    var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLong/2) * Math.sin(dLong/2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    var d = R * c;
+    return d.toFixed(3); //Retorna tres decimales
+}
+
+let sql_mi_ruta = (latini,lngini,latfin,longfin,callbak)=>
+{
+    let oMisRutas = [];
+
+    conexion.query("select C.CodiCtrl as id_control,C.DescCtrl as nombre," +
+        "C.Lati1Ctrl as lat1,C.Long1Ctrl as lng1," +
+        "C.Lati2Ctrl as lat2,C.Long2Ctrl lng2 " +
+        "from controles as C where C.EstaCtrl = 1;",(error,results,fields)=>
+    {
+      if(error)
+      {
+          callbak(error,null)
+      }else
+          {
+              /**tratamiento para obtener la ruta y sus distancias inicio y destino**/
+
+              let i =0;
+              for(i = 0;i<results.length;i++)
+              {
+                  /**  **/
+                  let oR = new cMiRuta();
+                  oR.setIdControl(results[i].id_control);
+                  oR.setLetraControl(results[i].DescCtrl);
+                  oR.setDistanceStart(getKilometros(results[i].lat1,results[i].lng1,
+                      latini,lngini));
+                  oR.setDistanceEnd(getKilometros(results[i].lat1,results[i].lng1,
+                      latfin,longfin));
+                  oMisRutas.push(oR);
+              }
+
+              callbak(null,oMisRutas)
+          }
+    })
+}
+
 module.exports = {
-    sql_rutas_frecuencias,sql_controles,sql_controles_all,sql_buses_all_ruta,sql_monitoreo_bus
+    sql_rutas_frecuencias,sql_controles,sql_controles_all,
+    sql_buses_all_ruta,sql_monitoreo_bus,sql_mi_ruta
 }
 
