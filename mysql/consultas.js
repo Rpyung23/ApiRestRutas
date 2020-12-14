@@ -202,8 +202,27 @@ let sql_mi_ruta = (latini,lngini,latfin,longfin,callbak)=>
     })
 }
 
+let sql_mi_ruta_ruta = (letra_control_inicio,letra_control_final,callback)=>
+{
+    conexion.query("select R.idRuta,R.LetrRuta,F.DescFrec from ruta as R join" +
+        " frecuencia as F on R.idRuta = F.idRutaFrec and F.idFrec in " +
+        " (select SC.idFrecSecuCtrl from secuencia_control as SC " +
+        " where SC.idFrecSecuCtrl in (select F.idFrec from frecuencia as F " +
+        " where F.idRutaFrec in (select R.idRuta from ruta as R) and F.ActiFrec = 1)" +
+        " and (SC.CodiCtrlSecuCtrl = '"+letra_control_inicio+"' or SC.CodiCtrlSecuCtrl='"+letra_control_final+"'));",(error,results,fields)=>
+        {
+            if(error)
+            {
+                callback(error,null);
+            }else
+                {
+                    callback(null,results);
+                }
+        });
+}
+
 module.exports = {
     sql_rutas_frecuencias,sql_controles,sql_controles_all,
-    sql_buses_all_ruta,sql_monitoreo_bus,sql_mi_ruta
+    sql_buses_all_ruta,sql_monitoreo_bus,sql_mi_ruta,sql_mi_ruta_ruta
 }
 

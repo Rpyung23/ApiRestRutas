@@ -1,5 +1,5 @@
 const { sql_rutas_frecuencias ,sql_controles,sql_controles_all,
-    sql_buses_all_ruta,sql_monitoreo_bus,sql_mi_ruta} = require('../mysql/consultas.js');
+    sql_buses_all_ruta,sql_monitoreo_bus,sql_mi_ruta,sql_mi_ruta_ruta} = require('../mysql/consultas.js');
 let express = require("express")
 let body = require("body-parser");
 let cMiRuta = require("../models/miruta")
@@ -271,10 +271,30 @@ app.get("/miruta/:lat_ini/:lng_ini/:lat_fin/:lng_fin",function (req,res)
 
                 oMfin = oMisRutas[0];
 
+                /**CONSULTA DE RUTAS CON LOS CONTROLES**/
 
-                /**RECORRER Y ORDENAR (INICIO)**/
+                sql_mi_ruta_ruta(oMInicio.getIdControl(),oMfin.getIdControl(),(error,results)=>
+                {
+                    if(error)
+                    {
+                        res.status(200).json(
+                            {
+                                ok:"ok",
+                                error:"s/n",
+                                data:null
+                            })
+                    }else
+                        {
+                            res.status(400).json(
+                                {
+                                    ok:"ok",
+                                    error:"s/n",
+                                    data:results
+                                })
+                        }
+                })
 
-                res.status(400).json(
+                /*res.status(400).json(
                     {
                         ok:"ok",
                         error:"s/n",
@@ -283,15 +303,23 @@ app.get("/miruta/:lat_ini/:lng_ini/:lat_fin/:lng_fin",function (req,res)
                                 inicio:oMInicio.getIdControl(),
                                 fin:oMfin.getIdControl()
                             }
-                    });
+                    });*/
             }
     });
 
 
 })
 
-app.post("/rating",function (req,res)
+app.post("/rating/:valor/:placa",function (req,res)
 {
+
+    let valor = req.params.valor;
+    let placa = req.params.placa;
+
+
+   /****/
+
+
     res.status(200).json(
         {
             ok:"ok",
@@ -299,5 +327,6 @@ app.post("/rating",function (req,res)
             rating:req.body.rating
         })
 })
+
 
 module.exports = app
