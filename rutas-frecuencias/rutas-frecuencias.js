@@ -279,18 +279,29 @@ app.get("/miruta/:lat_ini/:lng_ini/:lat_fin/:lng_fin",function (req,res)
                     {
                         res.status(200).json(
                             {
-                                ok:"ok",
-                                error:"s/n",
+                                ok:"error",
+                                error:error,
                                 data:null
                             })
                     }else
                         {
-                            res.status(400).json(
+                            if(results.length>0)
+                            {
+                                res.status(200).json(
+                                    {
+                                        ok:"ok",
+                                        error:"s/n",
+                                        data:results
+                                    })
+                            }else
                                 {
-                                    ok:"ok",
-                                    error:"s/n",
-                                    data:results
-                                })
+                                    res.status(200).json(
+                                        {
+                                            ok:"vacio",
+                                            error:"s/n",
+                                            data:null
+                                        })
+                                }
                         }
                 })
 
