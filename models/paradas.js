@@ -4,6 +4,7 @@ class Paradas
     lat = 0;
     lng = 0;
     tipo = 0;
+    distance = 0;
 
     constructor() {}
     getidParada()
@@ -23,6 +24,11 @@ class Paradas
         return this.tipo;
     }
 
+    getDistance()
+    {
+        return this.distance;
+    }
+
 
 
     setidParada(aux)
@@ -40,6 +46,10 @@ class Paradas
     setTipo(aux)
     {
         this.tipo=aux;
+    }
+    setDistance(aux)
+    {
+        this.distance=aux;
     }
 
 }

@@ -11,10 +11,6 @@ var conexion = mysql.createConnection(
         user:"root",
         password:"Vigitrack102030*"
     });
-
-
-
-
 /***SQL PARA OBTENER LA RUTA Y LAS FRECUENCIAS**/
 let sql_rutas_frecuencias = (callback)=>
 {
@@ -138,7 +134,6 @@ let sql_buses_all_ruta = (letra_ruta,date,callback)=>
         }
     });
 }
-
 
 let sql_monitoreo_bus = (bus,callback)=>
 {

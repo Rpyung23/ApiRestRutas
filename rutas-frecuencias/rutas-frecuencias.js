@@ -4,6 +4,7 @@ const { sql_rutas_frecuencias ,sql_controles,sql_controles_all,
 let express = require("express")
 let body = require("body-parser");
 let cMiRuta = require("../models/miruta")
+const {paradas} = require("../calculos/math");
 const app = express();
 app.use(body.json());
 app.use(body.urlencoded({ extended: false }));
@@ -375,6 +376,49 @@ app.get("/paradas/:id",function (req,res)
            }
    });
 
+});
+
+app.get("/paradas_cercana/:id/:lat_i/:lng_i/:lat_d/:lng_d",function (req,res)
+{
+    let id = req.params.id;
+    let lat_i = req.params.lat_i;
+    let lng_i = req.params.lng_i;
+    let lat_d = req.params.lat_d;
+    let lng_d = req.params.lng_d;
+
+    sql_mi_paradas(id,(error,oParadas)=>
+    {
+        if(error)
+        {
+            res.status(200).json(
+                {
+                    ok:"error",
+                    error:error
+                });
+        }else
+            {
+                if(oParadas.length>0)
+                {
+                    res.status(200).json(
+                        {
+                            ok:"ok",
+                            error:"s/n",
+                            data:
+                                {
+                                    paradaI:paradas(lat_i,lng_i,1,oParadas),
+                                    paradaF:paradas(lat_d,lng_d,0,oParadas)
+                                }
+                        });
+                }else
+                    {
+                        res.status(200).json(
+                            {
+                                ok:"vacio",
+                                error:"s/n"
+                            });
+                    }
+            }
+    });
 });
 
 module.exports = app
