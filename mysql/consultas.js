@@ -1,6 +1,7 @@
 let class_rutas = require("../models/rutas");
 let class_frecuencias = require("../models/frecuencias");
 let cMiRuta = require("../models/miruta");
+let cParadas = require("../models/paradas");
 var mysql = require("mysql");
 var conexion = mysql.createConnection(
     {
@@ -221,8 +222,34 @@ let sql_mi_ruta_ruta = (letra_control_inicio,letra_control_final,callback)=>
         });
 }
 
+let sql_mi_paradas = (id_ruta,callback)=>
+{
+    let oParadas = [];
+
+    conexion.query("select * from paradas as P where P.id_num_ruta="+id_ruta,(error,results,fiels)=>
+    {
+        if(error)
+        {
+            callback(error);
+        }else
+            {
+                for (let i=0;i<results.length;i++)
+                {
+                    var oP = new cParadas();
+                    oP.setidParada(results[i].id_parada);
+                    oP.setLat(results[i].lat);
+                    oP.setLng(results[i].lng);
+                    oP.setTipo(results[i].type)
+                    oParadas[i] = oP;
+                }
+                callback(null,oParadas);
+            }
+    })
+}
+
 module.exports = {
     sql_rutas_frecuencias,sql_controles,sql_controles_all,
-    sql_buses_all_ruta,sql_monitoreo_bus,sql_mi_ruta,sql_mi_ruta_ruta
+    sql_buses_all_ruta,sql_monitoreo_bus,sql_mi_ruta,sql_mi_ruta_ruta,
+    sql_mi_paradas
 }
 

@@ -1,11 +1,13 @@
 const { sql_rutas_frecuencias ,sql_controles,sql_controles_all,
-    sql_buses_all_ruta,sql_monitoreo_bus,sql_mi_ruta,sql_mi_ruta_ruta} = require('../mysql/consultas.js');
+    sql_buses_all_ruta,sql_monitoreo_bus,sql_mi_ruta,sql_mi_ruta_ruta
+    ,sql_mi_paradas} = require('../mysql/consultas.js');
 let express = require("express")
 let body = require("body-parser");
 let cMiRuta = require("../models/miruta")
 const app = express();
-let jsonparser = body.json();
-let url = body.urlencoded({ extended: false });
+app.use(body.json());
+app.use(body.urlencoded({ extended: false }));
+
 app.get("/rutas",function (req,res)
 {
     /**Todas las rutas y sus frecuencias**/
@@ -79,7 +81,7 @@ app.get("/controles_all",function (req,res)
 })
 
 /**TODOS LOS BUSES (RASTREO) POR RUTA**/
-app.get("/buses_all/:rutas/:date",jsonparser,function (req,res)
+app.get("/buses_all/:rutas/:date", (req,res)=>
 {
 
 
@@ -126,7 +128,7 @@ app.get("/buses_all/:rutas/:date",jsonparser,function (req,res)
 
 
 /**TODOS LOS BUSES (RASTREO) POR RUTA (RECIBE LOS DATOS EN EL BODY ) **/
-app.get("/buses_all_body",jsonparser,function (req,res)
+app.get("/buses_all_body",function (req,res)
 {
 
 
@@ -339,5 +341,40 @@ app.post("/rating/:valor/:placa",function (req,res)
         })
 })
 
+app.get("/paradas/:id",function (req,res)
+{
+   let id = req.params.id;
+
+   sql_mi_paradas(id,(error,oParadas)=>
+   {
+       if (error)
+       {
+           res.status(400).json(
+               {
+                   ok:"error",
+                   error:error
+               })
+       }else
+           {
+               if(oParadas.length>0)
+               {
+                   res.status(200).json(
+                       {
+                           ok:"ok",
+                           error:"s/n",
+                           data :oParadas
+                       })
+               }else
+                   {
+                       res.status(200).json(
+                           {
+                               ok:"vacio",
+                               error:"s/n"
+                           })
+                   }
+           }
+   });
+
+});
 
 module.exports = app
