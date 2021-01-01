@@ -117,9 +117,9 @@ let sql_controles_all = (callback)=>
 let sql_buses_all_ruta = (letra_ruta,date,callback)=>
 {
     conexion.query("select M.CodiVehiMoni as vehiculo,M.PlacVehiMoni as placa,M.LetrRutaMoni as letra_ruta," +
-        "M.UltiLatiMoni as lat,M.UltiLongMoni as lng,M.UltiRumbMoni as grados " +
+        "M.UltiLatiMoni as lat,M.UltiLongMoni as lng,M.UltiRumbMoni as grados,M.UltiVeloMoni as velo " +
         "from monitoreo as M where LetrRutaMoni = '"+letra_ruta+"' and UltiFechMoni between '"+date+" 05:00'" +
-        "and '"+date+" 23:59' and idSali_mMoni<>0 and M.PlacVehiMoni is not null",(error,results)=>
+        "and '"+date+" 23:59' and idSali_mMoni<>0 and M.PlacVehiMoni is not null and M.UltiVeloMoni>0",(error,results)=>
     {
         console.log(`select M.CodiVehiMoni as vehiculo,M.PlacVehiMoni as placa,M.LetrRutaMoni as letra_ruta,
         M.UltiLatiMoni as lat,M.UltiLongMoni as lng,M.UltiRumbMoni as grados 
@@ -138,8 +138,8 @@ let sql_buses_all_ruta = (letra_ruta,date,callback)=>
 let sql_monitoreo_bus = (bus,callback)=>
 {
     conexion.query("select M.CodiVehiMoni as vehiculo,M.PlacVehiMoni as placa,M.LetrRutaMoni as letra_ruta," +
-        "M.UltiLatiMoni as lat,M.UltiLongMoni as lng,M.UltiRumbMoni as grados "+
-        "from monitoreo as M where M.CodiVehiMoni = "+bus,(error,results,fields)=>
+        "M.UltiLatiMoni as lat,M.UltiLongMoni as lng,M.UltiRumbMoni as grados ,M.UltiVeloMoni as velo"+
+        "from monitoreo as M where M.CodiVehiMoni = "+bus+" and M.UltiVeloMoni>0",(error,results,fields)=>
     {
         if(error)
         {

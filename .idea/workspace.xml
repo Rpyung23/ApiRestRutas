@@ -20,11 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fd6e691-02d9-474b-8e51-e9ca585f1a2e" name="Default Changelist" comment="08/12/2020 -&gt; apirest miruta datos por url :/">
-      <change afterPath="$PROJECT_DIR$/calculos/math.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/paradas.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/paradas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql/consultas.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/consultas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rutas-frecuencias/rutas-frecuencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/rutas-frecuencias/rutas-frecuencias.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +91,11 @@
       <workItem from="1608136122359" duration="2589000" />
       <workItem from="1608355119522" duration="3321000" />
       <workItem from="1608393180738" duration="49000" />
-      <workItem from="1608403528306" duration="3662000" />
+      <workItem from="1608403528306" duration="5260000" />
+      <workItem from="1608686944084" duration="100000" />
+      <workItem from="1609461166787" duration="150000" />
+      <workItem from="1609461335202" duration="2227000" />
+      <workItem from="1609532653168" duration="652000" />
     </task>
     <task id="LOCAL-00001" summary="05/12/2020 -&gt; apirest-consultas y models se trabajo falta las apirest ruta cercana y rating">
       <created>1607147028972</created>
@@ -150,6 +151,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="430" y="229" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1607138990255" />
+    <state x="463" y="106" key="FileChooserDialogImpl" timestamp="1608687050267">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="106" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1608687050267" />
     <state x="554" y="262" key="Github.ShareDialog" timestamp="1607125445502">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -163,12 +168,12 @@
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1607360312751" />
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1607139841014" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1608169232287">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1608686989577">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1608169232287" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1608686989577" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1607147041425" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1608002627702" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1608412471039" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
